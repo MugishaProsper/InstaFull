@@ -40,12 +40,13 @@ export const getProfilePicture = async (req, res) => {
 
 export const uploadMedicalCertificate = async (req, res) => {
   const userId = req.user._id;
+  const { googleDriveLink } = req.body;
   try {
     const user = await User.findById(userId);
     if(!user){
       return res.status(404).json({ message : "User not found" });
     }
-    const newCertificate = new MedicalCertificate({ user : user._id, name : `${user.firstName}_${user.lastName}_Certificate`, file : req.file.buffer, contentType : req.file.mimetype });
+    const newCertificate = new MedicalCertificate({ user : user._id, name : `${user.firstName}_${user.lastName}_Certificate`, file : req.file.buffer, contentType : req.file.mimetype, googleDriveLink : googleDriveLink ? googleDriveLink : null });
 
     await newCertificate.save();
     return res.status(200).json({ message : "Certificate uploaded successfully" });
@@ -57,12 +58,13 @@ export const uploadMedicalCertificate = async (req, res) => {
 
 export const uploadMedicalLicense = async (req, res) => {
   const userId = req.user._id;
+  const { googleDriveLink } = req.body;
   try {
     const user = await User.findById(userId);
     if(!user){
       return res.status(404).json({ message : "User not found" });
     }
-    const newLicense = new MedicalLicence({ user : user._id, name : `${user.firstName}_${user.lastName}_License`, file : req.file.buffer, contentType : req.file.mimetype });
+    const newLicense = new MedicalLicence({ user : user._id, name : `${user.firstName}_${user.lastName}_License`, file : req.file.buffer, contentType : req.file.mimetype, googleDriveLink : googleDriveLink ? googleDriveLink : null });
 
     await newLicense.save();
     return res.status(200).json({ message : "license uploaded successfully" });

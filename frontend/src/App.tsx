@@ -27,6 +27,7 @@ import AdminPayments from "./pages/admin/payments";
 import AdminConsultation from "./pages/admin/consultation";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import StepTwoCompletion from "./components/SignUp/StepTwoCompletion";
 
 
 export default function App(){
@@ -54,6 +55,7 @@ export default function App(){
         <Route path="/auth/patient/signup" element={<SignUp />} />
         <Route path="/auth/doctor/signup" element={<SignUp />} />
         <Route path="/auth/patient/login" element={<Login />} />
+        <Route path="/auth/profile/step2" element={<StepTwoCompletion/>}/>
         <Route path="/patient/doctors" element={<DoctorList/>} />
         <Route path="/patient/dashboard" element={<Dashboard/>} />
         <Route path="/patient/appointments" element={<AppointmentsPage />} />

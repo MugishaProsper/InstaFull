@@ -10,14 +10,16 @@ const medicalCertificateSchema = mongoose.Schema({
   user : { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
   name: { type: String, required: true },
   file: { type: Buffer, required: true },
-  contentType: { type: String }
+  contentType: { type: String },
+  googleDriveLink : { type : String }
 }, { timestamps: true });
 
 const medicalLicenceSchema = mongoose.Schema({
   user : { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
   name: { type: String, required: true },
   file: { type: Buffer, required: true },
-  contentType: { type: String }
+  contentType: { type: String },
+  googleDriveLink : { type : String }
 }, { timestamps: true });
 
 const passportPhotoSchema = mongoose.Schema({

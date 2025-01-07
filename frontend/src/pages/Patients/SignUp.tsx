@@ -5,7 +5,7 @@ import FormSection from "../../components/SignUp/Patient/FormSection";
 
 const SignUp: React.FC = () => {
   return (
-    <div className="min-h-screen w-[95rem] flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen w-full flex items-center justify-center bg-gray-100 p-5">
       <div className="bg-white shadow-lg rounded-lg p-8 ">
         <div className="flex flex-col md:flex-row">
           {/* Left Section - Header and Image */}
@@ -14,7 +14,7 @@ const SignUp: React.FC = () => {
             <StepIndicator />
           </div>
           {/* Right Section - Form */}
-          <div className="flex-1 p-6">
+          <div className="flex-1 p-4">
             <FormSection />
           </div>
         </div>

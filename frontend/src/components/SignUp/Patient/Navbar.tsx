@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav className="bg-white shadow py-2">
+      <nav className="bg-white shadow">
         <div className="container mx-auto flex items-center justify-between">
           {/* Brand Name / Logo Section */}
           <div className="flex items-center">

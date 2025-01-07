@@ -11,7 +11,8 @@ const userSchema = mongoose.Schema({
   profilePicture: { type: Buffer },
   profilePictureContentType: { type: String },
   gender: { type: String, enum: ['male', 'female'], default: 'male' },
-  verificationCode: { type: String, default: null }
+  verificationCode: { type: String, default: null },
+  role : { type : String, enum : ['doctor', 'patient'], default : 'patient' }
 }, { timestamps: true });
 
 const specialitySchema = mongoose.Schema({

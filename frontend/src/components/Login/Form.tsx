@@ -1,16 +1,18 @@
 import SocialAuthButtons from '../Patient/SocialAuthButtons'
 
 const Form = () => {
+    const formData = { email : '', password : '' };
+
     return (
         <div className="flex items-center justify-center border bottom-2 text-black w-[35rem] rounded-[10px]">
             <div className="bg-white p-8 rounded-lg  w-[35rem] min-w-md">
                 <h1 className="text-2xl font-bold mb-6 text-center text-blue-500">Log Into Your Account</h1>
 
                 <form action="login" className='flex flex-col '>
-                    <label htmlFor="email" className="mb-2 text-gray-700 ">Email or Phone Number</label>
-                    <input type="text" placeholder='Email or Phone number' className="mb-4 p-2 border rounded-md bg-white " />
+                    <label htmlFor="email" className="mb-2 text-gray-700 ">Email</label>
+                    <input type="text" placeholder='Email or Phone number' className="mb-4 p-2 border rounded-md bg-white " value={formData.email} />
                     <label htmlFor="password" className="mb-2  text-gray-700">Password</label>
-                    <input type="password" placeholder='Password' className="mb-4 p-2 border rounded-md bg-white " />
+                    <input type="password" placeholder='Password' className="mb-4 p-2 border rounded-md bg-white " value={formData.password} />
                     <div className="mb-4 text-right">
                         <a href="/reset-password" className="text-red-700 hover:underline">Forgot your password?</a>
                     </div>

@@ -3,7 +3,7 @@ import React from "react";
 const Header: React.FC = () => {
     let wave = "👋";
   return (
-    <div className="flex flex-col justify-center items-center text-center h-full border">
+    <div className="flex flex-col justify-center items-center text-center h-full">
       <img src="/Group 1000001874.png" alt="InstaHealth Logo" className="h-[150px] mb-4" />
       <h1 className="text-[2.5rem] font-semibold text-blue-600">Welcome to InstaHealth </h1>
       <p className="text-gray-600 mt-1 text-[1rem] opacity-[80%]">

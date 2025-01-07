@@ -20,7 +20,7 @@ export const signup = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, salt);
 
     const verificationCode = await generateVerificationCode(); // Generate verification code
-    const new_user = new User({ firstName, lastName, username, email, password: hashedPassword, defaultProfilePicture: defaultProfilePic, role: role, verificationCode: verificationCode });
+    const new_user = new User({ firstName, lastName, username, email, gender, password: hashedPassword, defaultProfilePicture: defaultProfilePic, role: role, verificationCode: verificationCode });
     //save new user
     await new_user.save();
     // check if the user uploaded profile picture
@@ -32,7 +32,7 @@ export const signup = async (req, res) => {
     //send verification codes and set cookies
     await sendVerificationCode(new_user.email, verificationCode);
     generateTokenAndSetCookie(new_user._id, res);
-    return res.status(200).json({ message: `${role} created successfully`, new_user })
+    return res.status(200).json({ message: `${role} created successfully` })
   } catch (error) {
     console.error(error);
     return res.status(500).json({ message: 'Server error' })

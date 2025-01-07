@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import Header from "../../components/SignUp/Patient/Header";
 import StepIndicator from "../../components/SignUp/Patient/StepIndicator";
+import { useNavigate } from "react-router";
 
 const StepTwoCompletion: React.FC = () => {
   const [countries, setCountries] = useState<{ name: string; code: string }[]>([]);
@@ -13,6 +14,7 @@ const StepTwoCompletion: React.FC = () => {
   const [googleDriveLink, setGoogleDriveLink] = useState("");
   const [category, setCategory] = useState<string>("");
   const [doctorType, setDoctorType] = useState<string>("");
+  const navigate = useNavigate();
 
 
   const categories = ["Therapy", "Surgery", "Midwifery", "Other"];
@@ -97,6 +99,7 @@ const StepTwoCompletion: React.FC = () => {
       console.error(error);
     } finally {
       setIsSubmitting(false);
+      navigate("/auth/patient/login");
     }
   };
 
